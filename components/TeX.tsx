@@ -1,28 +1,21 @@
 "use client"
 
 import { MathJax, MathJaxContext } from "better-react-mathjax";
+import { Latex } from '@fileforge/react-print';
 import React from 'react'
 
 export const Vector = ({ text }: { text: string }) => {
     return (
-        <MathJaxContext>
-            <MathJax inline>
-                <span style={{ color: 'black', fontSize: '14px' }}>
-                    {`\\(\\vec{${text}}\\)`}
-                </span>
-            </MathJax>
-        </MathJaxContext>
+        <Latex>
+            {String.raw`\vec{${text}}`}
+        </Latex>
     )
 }
 
 export const Letter = ({ text }: { text: string }) => {
     return (
-        <MathJaxContext>
-            <MathJax inline>
-                <span style={{ color: 'black', fontSize: '14px' }}>
-                    {`\\({${text}}\\)`}
-                </span>
-            </MathJax>
-        </MathJaxContext>
+        <Latex>
+            {`\{${text}}`}
+        </Latex>
     )
 }

@@ -14,8 +14,6 @@ import {
 import MathComponent from "@/components/MathComponent";
 import Link from "next/link";
 import Draw from "@/components/Draw";
-import MathPage from "@/components/MathPDFGenerator";
-import OneDoc from "@/components/OneDoc";
 import { compile } from "@fileforge/react-print";
 import { useEffect, useState } from "react";
 import OneDoc2 from "@/components/OneDoc2";
@@ -53,7 +51,7 @@ export default function Home() {
     (async () => {
       let htmlExtracted = await compile(<OneDoc2 />)
       // console.log(ReactDOMServer.renderToStaticMarkup(<OneDoc2 />);)
-      // console.log(htmlExtracted)
+      console.log(htmlExtracted)
       setHtml(htmlExtracted)
     })()
 
